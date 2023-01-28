@@ -1,0 +1,14 @@
+bybitApi:
+    endpoint: https://api.bybit.com
+    instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear
+    apiKey: 
+    secretKey: 
+    
+bybitSwingAccount:
+    balanceInBank: 1977
+    usdToCzkRate: 22.68
+    usedMarginAccount: 0.9
+    riskPerTrade: 0.01
+
+bybitPlaceTrades:
+    auditLogPath: "/home/jirka/log/trading-backoffice/bybit-place-trades-audit-log.csv"
