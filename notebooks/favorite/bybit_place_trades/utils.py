@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import datetime
 
-DEFAULT_LEVERAGE = 1
+MIN_LEVERAGE = 1
 DEFAULT_PRICE_SCALE = 2
 
 
@@ -119,6 +119,9 @@ def __parse_price_scale(instruments_info: dict, ticker: str) -> float:
 def __set_leverage(exchange, ticker: str, leverage: float) -> None:
     actual_leverage = exchange.my_position(
         symbol=ticker)["result"][0]["leverage"]
+
+    if leverage < MIN_LEVERAGE:
+        leverage = MIN_LEVERAGE
 
     if leverage == actual_leverage:
         return
