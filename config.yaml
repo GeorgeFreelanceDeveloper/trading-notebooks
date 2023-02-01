@@ -1,14 +1,29 @@
-bybitApi:
-    endpoint: https://api.bybit.com
-    instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear
-    apiKey: 
-    secretKey: 
-    
-bybitSwingAccount:
-    balanceInBank: 1977
-    usdToCzkRate: 22.68
-    usedMarginAccount: 0.9
-    riskPerTrade: 0.01
+bybitMajorAccount:
+        balanceInBank: 1763
+        usdToCzkRate: 22.68
+        usedMarginAccount: 0.9
+        riskPerTrade: 0.02
+        bybitApi:
+                endpoint: https://api.bybit.com
+                instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear
+                apiKey: 
+                secretKey:
+                permission: Contracts - Orders Positions  , Derivatives API V3 - Trade
+                createDate: 1.2.2023
+                daysOfExpiration: 88
+        auditLogPath: "/home/jirka/log/trading-backoffice/major-portfolio-audit-log.csv"
 
-bybitPlaceTrades:
-    auditLogPath: "/home/jirka/log/trading-backoffice/bybit-place-trades-audit-log.csv"
+bybitAltcoinsAccount:
+        balanceInBank: 1977
+        usdToCzkRate: 22.68
+        usedMarginAccount: 0.9
+        riskPerTrade: 0.01
+        bybitApi:
+                endpoint: https://api.bybit.com
+                instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear
+                apiKey: 
+                secretKey:
+                permission: Contracts - Orders Positions  , Derivatives API V3 - Trade
+                createDate: 1.2.2023
+                daysOfExpiration: 88
+        auditLogPath: "/home/jirka/log/trading-backoffice/altcoins-portfolio-audit-log.csv"

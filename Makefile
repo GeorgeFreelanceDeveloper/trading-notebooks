@@ -45,8 +45,11 @@ clean:
 	rm -rf jupyter_notebooks.egg-info
 	rm -rf venv
 
-update_bybit_place_trades_excel:
-	libreoffice notebooks/favorite/bybit_place_trades/data/trades.csv 
+majors_portfolio_trades:
+	libreoffice notebooks/placeTrades/bybit_major_portfolio/data/trades.csv
 
-update_trading_view_images_downloader_excel:
-	libreoffice notebooks/favorite/trading_view_images_downloader/data/trades.csv 
+altcoins_portfolio_trades:
+	 libreoffice notebooks/placeTrades/bybit_altcoins_portfolio/data/trades.csv 
+
+tw_downloader_trades:
+	libreoffice notebooks/utils/trading_view_images_downloader/data/trades.csv 
