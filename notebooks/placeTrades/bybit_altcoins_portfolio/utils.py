@@ -40,6 +40,11 @@ def transform_trades(trades_raw: pd.DataFrame, instruments_info: dict, config: d
     trades["position_usd"] = trades["position"] * trades["entry_price"]
     trades["leverage"] = trades["position_usd"] / used_margin_account_usd
 
+    # Round leverage
+    trades['leverage'] = trades['leverage'].astype(float)
+    trades.loc[trades["leverage"] < MIN_LEVERAGE, "leverage"] = MIN_LEVERAGE
+    trades = trades.round({"leverage": 2})
+
     # Roud prices by contract specs
     trades["price_scale"] = trades.apply(
         lambda row: __parse_price_scale(instruments_info, row["ticker"]), axis=1)
@@ -71,7 +76,7 @@ def place_trades_on_exchange(trades: pd.DataFrame, exchange) -> pd.DataFrame:
     for index, trade in trades.iterrows():
 
         try:
-            __set_leverage(exchange, trade["ticker"], round(trade["leverage"],2))
+            __set_leverage(exchange, trade["ticker"], trade["leverage"])
 
             __set_isolate_margin(exchange,
                                  trade["ticker"],
@@ -120,9 +125,6 @@ def __parse_price_scale(instruments_info: dict, ticker: str) -> float:
 def __set_leverage(exchange, ticker: str, leverage: float) -> None:
     actual_leverage = exchange.my_position(
         symbol=ticker)["result"][0]["leverage"]
-
-    if leverage < MIN_LEVERAGE:
-        leverage = MIN_LEVERAGE
 
     if leverage == actual_leverage:
         return
