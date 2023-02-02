@@ -1,6 +1,7 @@
 bybitMajorAccount:
         futuresAccountSizeUsd: 84
         riskPerTradeUsd: 42
+        usedMarginAccount: 0.95
         bybitApi:
                 endpoint: https://api.bybit.com
                 instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear
@@ -14,6 +15,7 @@ bybitMajorAccount:
 bybitAltcoinsAccount:
         futuresAccountSizeUsd: 84
         riskPerTradeUsd: 21
+        usedMarginAccount: 0.95
         bybitApi:
                 endpoint: https://api.bybit.com
                 instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear
