@@ -1,8 +1,6 @@
 bybitMajorAccount:
-        balanceInBank: 1763
-        usdToCzkRate: 22.68
-        usedMarginAccount: 0.9
-        riskPerTrade: 0.02
+        futuresAccountSizeUsd: 84
+        riskPerTradeUsd: 42
         bybitApi:
                 endpoint: https://api.bybit.com
                 instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear
@@ -14,10 +12,8 @@ bybitMajorAccount:
         auditLogPath: "/home/jirka/log/trading-backoffice/major-portfolio-audit-log.csv"
 
 bybitAltcoinsAccount:
-        balanceInBank: 1977
-        usdToCzkRate: 22.68
-        usedMarginAccount: 0.9
-        riskPerTrade: 0.01
+        futuresAccountSizeUsd: 84
+        riskPerTradeUsd: 21
         bybitApi:
                 endpoint: https://api.bybit.com
                 instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear

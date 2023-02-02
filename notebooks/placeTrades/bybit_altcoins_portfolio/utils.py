@@ -26,19 +26,18 @@ def create_account_info(wallet_balance_raw: dict, config: dict):
     }
 
 
-def transform_trades(trades_raw: pd.DataFrame, instruments_info: dict, config: dict, account_info: dict) -> pd.DataFrame:
+def transform_trades(trades_raw: pd.DataFrame, instruments_info: dict, config: dict) -> pd.DataFrame:
     trades = trades_raw.copy()
 
-    risk_per_trade = account_info["accountSize"] * \
-        config[ACCOUNT_TYPE]["riskPerTrade"]
-    used_margin_account_usd = account_info["balanceOnExchange"] * \
+    risk_per_trade_usd = config[ACCOUNT_TYPE]["riskPerTradeUsd"]
+    futures_account_size_usd = config[ACCOUNT_TYPE]["futuresAccountSizeUsd"] * \
         config[ACCOUNT_TYPE]["usedMarginAccount"]
 
     trades["move"] = trades["entry_price"] - trades["stop_loss"]
     trades["profit_target"] = trades["entry_price"] + trades["move"]
-    trades["position"] = abs(risk_per_trade/trades["move"])
+    trades["position"] = abs(risk_per_trade_usd/trades["move"])
     trades["position_usd"] = trades["position"] * trades["entry_price"]
-    trades["leverage"] = trades["position_usd"] / used_margin_account_usd
+    trades["leverage"] = trades["position_usd"] / futures_account_size_usd
 
     # Round leverage
     trades['leverage'] = trades['leverage'].astype(float)
@@ -112,7 +111,8 @@ def place_trades_on_exchange(trades: pd.DataFrame, exchange) -> pd.DataFrame:
 
 def write_trades_to_audit_log(trades: pd.DataFrame, audit_log_path) -> None:
     trades["create_date"] = datetime.datetime.now()
-    trades.to_csv(audit_log_path, mode='a', header=not os.path.exists(audit_log_path), index=False)
+    trades.to_csv(audit_log_path, mode='a',
+                  header=not os.path.exists(audit_log_path), index=False)
 
 
 def __parse_price_scale(instruments_info: dict, ticker: str) -> float:
