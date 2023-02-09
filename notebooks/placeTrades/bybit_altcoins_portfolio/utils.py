@@ -2,10 +2,11 @@ import yaml
 import pandas as pd
 import os
 import datetime
+import decimal
 
 MIN_LEVERAGE = 1
 DEFAULT_PRICE_SCALE = 2
-DEFAULT_QTY_STEP = 1
+DEFAULT_QTY_STEP = "1"
 ACCOUNT_TYPE = "bybitAltcoinsAccount"
 
 
@@ -60,7 +61,8 @@ def transform_trades(trades_raw: pd.DataFrame, instruments_info: dict, config: d
         x["move"], x["price_scale"]), axis=1)
 
     # Round position
-    trades["position"] = trades.apply(lambda x: int(x["position"]/x["qty_step"])*x["qty_step"], axis=1)
+    trades["position"] = trades.apply(lambda x: round(
+        x["position"], decimal.Decimal(x["qty_step"]).as_tuple().exponent * -1), axis=1)
 
     # Compute expected profit and loss
     trades["expected_profit"] = abs(
@@ -123,11 +125,11 @@ def __parse_price_scale(instruments_info: dict, ticker: str) -> float:
                    for x in instruments_info_list if x["symbol"] == ticker]
     return int(price_scale[0]) if any(price_scale) else DEFAULT_PRICE_SCALE
 
-def __parse_qty_step(instruments_info: dict, ticker: str) -> float:
+def __parse_qty_step(instruments_info: dict, ticker: str) -> str:
     instruments_info_list = instruments_info["result"]["list"]
     qty_step = [x["lotSizeFilter"]["qtyStep"]
                 for x in instruments_info_list if x["symbol"] == ticker]
-    return float(qty_step[0]) if any(qty_step) else DEFAULT_QTY_STEP
+    return qty_step[0] if any(qty_step) else DEFAULT_QTY_STEP
 
 def __set_leverage(exchange, ticker: str, leverage: float) -> None:
     actual_leverage = exchange.my_position(
