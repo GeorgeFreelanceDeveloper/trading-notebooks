@@ -44,12 +44,12 @@ clean:
 	rm -rf dist
 	rm -rf jupyter_notebooks.egg-info
 	rm -rf venv
-
+	
 majors_portfolio_trades:
-	libreoffice notebooks/placeTrades/bybit_major_portfolio/data/trades.csv
+        libreoffice notebooks/placeTrades/bybitMajorPortfolio/data/trades.csv
 
 altcoins_portfolio_trades:
-	 libreoffice notebooks/placeTrades/bybit_altcoins_portfolio/data/trades.csv 
+         libreoffice notebooks/placeTrades/bybitAltcoinsPortfolio/data/trades.csv 
 
 tw_downloader_trades:
-	libreoffice notebooks/utils/trading_view_images_downloader/data/trades.csv 
+        libreoffice notebooks/utils/tradingViewImagesDownloader/data/trades.csv 
