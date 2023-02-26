@@ -1,4 +1,4 @@
-bybitMajorAccount:
+bybitPositionAccount:
         futuresAccountSizeUsd: 84
         riskPerTradeUsd: 42
         usedMarginAccount: 0.95
@@ -10,9 +10,9 @@ bybitMajorAccount:
                 permission: Contracts - Orders Positions  , Derivatives API V3 - Trade
                 createDate: 1.2.2023
                 daysOfExpiration: 88
-        auditLogPath: "/home/jirka/log/trading-backoffice/major-portfolio-audit-log.csv"
+        auditLogPath: "/home/jirka/log/trading-backoffice/bybit-position-portfolio-audit-log.csv"
 
-bybitAltcoinsAccount:
+bybitSwingAccount:
         futuresAccountSizeUsd: 84
         riskPerTradeUsd: 21
         usedMarginAccount: 0.95
@@ -24,4 +24,4 @@ bybitAltcoinsAccount:
                 permission: Contracts - Orders Positions  , Derivatives API V3 - Trade
                 createDate: 1.2.2023
                 daysOfExpiration: 88
-        auditLogPath: "/home/jirka/log/trading-backoffice/altcoins-portfolio-audit-log.csv"
+        auditLogPath: "/home/jirka/log/trading-backoffice/bybit-swing-portfolio-audit-log.csv"
