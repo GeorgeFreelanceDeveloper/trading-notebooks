@@ -7,7 +7,7 @@ import decimal
 MIN_LEVERAGE = 1
 DEFAULT_PRICE_SCALE = 2
 DEFAULT_QTY_STEP = "1"
-ACCOUNT_TYPE = "bybitMajorAccount"
+ACCOUNT_TYPE = "bybitPositionAccount"
 
 
 def load_config(config_file: str) -> dict:
