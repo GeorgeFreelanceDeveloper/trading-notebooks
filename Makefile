@@ -45,11 +45,11 @@ clean:
 	rm -rf jupyter_notebooks.egg-info
 	rm -rf venv
 	
-majors_portfolio_trades:
-        libreoffice notebooks/placeTrades/bybitMajorPortfolio/data/trades.csv
+position_portfolio_trades:
+	libreoffice notebooks/placeTrades/bybitPositionPortfolio/data/trades.csv
 
-altcoins_portfolio_trades:
-         libreoffice notebooks/placeTrades/bybitAltcoinsPortfolio/data/trades.csv 
+swing_portfolio_trades:
+	libreoffice notebooks/placeTrades/bybitSwingPortfolio/data/trades.csv 
 
 tw_downloader_trades:
-        libreoffice notebooks/utils/tradingViewImagesDownloader/data/trades.csv 
+	libreoffice notebooks/utils/tradingViewImagesDownloader/data/trades.csv 
