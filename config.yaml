@@ -25,3 +25,17 @@ bybitSwingAccount:
                 createDate: 1.2.2023
                 daysOfExpiration: 88
         auditLogPath: "/home/jirka/log/trading-backoffice/bybit-swing-portfolio-audit-log.csv"
+
+bybitIntradayAccount:
+        futuresAccountSizeUsd: 10
+        riskPerTradeUsd: 0.5
+        usedMarginAccount: 0.45
+        bybitApi:
+                endpoint: https://api.bybit.com
+                instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear
+                apiKey: 
+                secretKey:
+                permission: Contracts - Orders Positions  , Derivatives API V3 - Trade
+                createDate: 1.2.2023
+                daysOfExpiration: 88
+        auditLogPath: "/home/jirka/log/trading-backoffice/bybit-intraday-portfolio-audit-log.csv"

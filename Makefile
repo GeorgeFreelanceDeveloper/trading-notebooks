@@ -51,5 +51,8 @@ position_portfolio_trades:
 swing_portfolio_trades:
 	libreoffice notebooks/placeTrades/bybitSwingPortfolio/data/trades.csv 
 
+intraday_portfolio_trades:
+	libreoffice notebooks/placeTrades/bybitIntradayPortfolio/data/trades.csv 
+
 tw_downloader_trades:
 	libreoffice notebooks/utils/tradingViewImagesDownloader/data/trades.csv 
