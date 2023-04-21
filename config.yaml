@@ -1,29 +1,23 @@
 bybitPositionAccount:
-        futuresAccountSizeUsd: 84
-        riskPerTradeUsd: 42
-        usedMarginAccount: 0.95
+        futuresAccountSizeUsd: 63
+        riskPerTradeUsd: 21
+        usedMarginAccount: 0.45
         bybitApi:
-                endpoint: https://api.bybit.com
-                instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear
+                testnet: True
                 apiKey: 
                 secretKey:
-                permission: Contracts - Orders Positions  , Derivatives API V3 - Trade
-                createDate: 1.2.2023
-                daysOfExpiration: 88
+        triggerPriceDistancePercentage: 0.02
         auditLogPath: "/home/jirka/log/trading-backoffice/bybit-position-portfolio-audit-log.csv"
 
 bybitSwingAccount:
-        futuresAccountSizeUsd: 84
+        futuresAccountSizeUsd: 42
         riskPerTradeUsd: 21
-        usedMarginAccount: 0.95
+        usedMarginAccount: 0.45
         bybitApi:
-                endpoint: https://api.bybit.com
-                instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear
+                testnet: True
                 apiKey: 
                 secretKey:
-                permission: Contracts - Orders Positions  , Derivatives API V3 - Trade
-                createDate: 1.2.2023
-                daysOfExpiration: 88
+        triggerPriceDistancePercentage: 0.02
         auditLogPath: "/home/jirka/log/trading-backoffice/bybit-swing-portfolio-audit-log.csv"
 
 bybitIntradayAccount:
@@ -32,7 +26,7 @@ bybitIntradayAccount:
         usedMarginAccount: 0.45
         bybitApi:
                 testnet: True
-                apiKey: PUNOObtxYlBcSidcQ1
-                secretKey: mETSll3uO7eR1z4LfOCP7lYpbevdUg8xhNqX
+                apiKey: 
+                secretKey: 
         triggerPriceDistancePercentage: 0.02
         auditLogPath: "/home/jirka/log/trading-backoffice/bybit-intraday-portfolio-audit-log.csv"
