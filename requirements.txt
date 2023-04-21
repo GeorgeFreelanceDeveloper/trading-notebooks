@@ -1,10 +1,13 @@
-pandas==1.5.1
+# Base libraries
 requests==2.28.1
 lxml==4.9.2
 openpyxl==3.0.9
 pyyaml==6.0
-matplotlib==3.5.2
+
+# Data analysis libraries
+pandas==2.0.0
+matplotlib==3.7.1
 mplfinance==v0.12.9b1
-pybit==2.4.1
-autopep8==2.0.1
-pylint==2.15.10
+
+# Exchange api libraries
+pybit==5.2.0

@@ -31,11 +31,8 @@ bybitIntradayAccount:
         riskPerTradeUsd: 0.5
         usedMarginAccount: 0.45
         bybitApi:
-                endpoint: https://api.bybit.com
-                instrumentInfoEndpoint: https://api.bybit.com/derivatives/v3/public/instruments-info?category=linear
-                apiKey: 
-                secretKey:
-                permission: Contracts - Orders Positions  , Derivatives API V3 - Trade
-                createDate: 1.2.2023
-                daysOfExpiration: 88
+                testnet: True
+                apiKey: PUNOObtxYlBcSidcQ1
+                secretKey: mETSll3uO7eR1z4LfOCP7lYpbevdUg8xhNqX
+        triggerPriceDistancePercentage: 0.02
         auditLogPath: "/home/jirka/log/trading-backoffice/bybit-intraday-portfolio-audit-log.csv"
