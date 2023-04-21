@@ -1,6 +1,6 @@
 # trading-backoffice
 
-Trading backoffice for simple entry of trades on the exchange, save of trade analyzes and other automation. Build on Jupyter notebooks.
+Trading backoffice for simple entry of trades on the exchange, save of trade images from TradingView and other automation. It is build on Jupyter notebook.
 
 ## Keywords
 **Backoffice**
@@ -14,27 +14,20 @@ Trading automation refers to the use of computer programs and algorithms to exec
 Jupyter Notebook is an open-source web application that allows users to create and share documents that contain live code, equations, visualizations, and narrative text. It is commonly used for data cleaning and transformation, numerical simulation, statistical modeling, data visualization, and machine learning. Jupyter Notebook supports many programming languages, including Python, R, Julia, and others, and allows users to mix code, markdown, and multimedia in a single document. It is widely used in data science, scientific computing, and machine learning communities and is often used in educational settings.
 
 
-## How to prepare
-```bash
+## Installation
+```commandline
+make clean
 make prepare
 ```
 
-## How to run
-```bash
-make run
+## Usage
+**Run job**
+```commandline
+make-run
 ```
 
-## Technologies
-* Python 3
-* Pandas
-* Pybit
-* JupyterNotebook
-
-## Usefully links
-* [CHANGELOG](CHANGELOG.md)
-
 ## Contact
-You can reach out for support on the [GeorgeQuantAnalyst](https://t.me/GeorgeQunatAnalyst) telegram chat.
+You can reach out for support on the [GeorgeQuantAnalyst](https://t.me/GeorgeQuantAnalyst) telegram chat.
 
 ## Contributors
 

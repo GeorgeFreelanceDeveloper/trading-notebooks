@@ -46,13 +46,13 @@ clean:
 	rm -rf venv
 	
 position_portfolio_trades:
-	libreoffice notebooks/placeTrades/bybitPositionPortfolio/data/trades.csv
+	libreoffice notebooks/placeTrades/bybit/data/position_trades.csv
 
 swing_portfolio_trades:
-	libreoffice notebooks/placeTrades/bybitSwingPortfolio/data/trades.csv 
+	libreoffice notebooks/placeTrades/bybit/data/swing_trades.csv 
 
 intraday_portfolio_trades:
-	libreoffice notebooks/placeTrades/bybitIntradayPortfolio/data/trades.csv 
+	libreoffice notebooks/placeTrades/bybit/data/intraday_trades.csv
 
 tw_downloader_trades:
 	libreoffice notebooks/utils/tradingViewImagesDownloader/data/trades.csv 
