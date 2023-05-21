@@ -16,7 +16,5 @@
 - [x] Release version
 
 ## Medium priority
-- [] Implement add small trigger order for early reaction job (Bybit place trades intraday and swing)
-
 
 ## Low priority
