@@ -17,6 +17,15 @@ make prepare
 make-run
 ```
 
+## Examples
+
+### TradingViewImageDownloader
+![](images/TradingViewImageDownloader.png)
+
+### PlaceTradesBybit
+![](images/BybitSwingPortfolioPlaceTrades.png)
+
+
 ## Contributors
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->

@@ -31,10 +31,6 @@ prepare:
 	. venv/bin/activate && pip install -r requirements.txt
 	mkdir -p ${APP_LOG_FOLDER}
 
-test:
-	@echo "Testing ..."
-	. venv/bin/activate && ${PYTHON} -m unittest discover -v
-
 run:
 	@echo "Run ..."
 	. venv/bin/activate && jupyter-lab
@@ -44,15 +40,3 @@ clean:
 	rm -rf dist
 	rm -rf jupyter_notebooks.egg-info
 	rm -rf venv
-	
-position_portfolio_trades:
-	libreoffice notebooks/placeTrades/bybit/data/position_trades.csv
-
-swing_portfolio_trades:
-	libreoffice notebooks/placeTrades/bybit/data/swing_trades.csv 
-
-intraday_portfolio_trades:
-	libreoffice notebooks/placeTrades/bybit/data/intraday_trades.csv
-
-tw_downloader_trades:
-	libreoffice notebooks/utils/tradingViewImagesDownloader/data/trades.csv 
